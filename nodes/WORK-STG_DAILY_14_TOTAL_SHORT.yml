@@ -1,5 +1,5 @@
 fileVersion: 1
-id: f3fb5b37-506f-4496-b725-66ed8c7bf3a8
+id: eb73f59b-5491-418b-90f0-9eb5d64e95d4
 name: STG_DAILY_14_TOTAL_SHORT
 operation:
   config:
@@ -12,15 +12,15 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: DESTINATION
+  locationName: WORK
   materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: a0140f72-f1a3-4462-bd7c-333a3386c43f
-          stepCounter: f3fb5b37-506f-4496-b725-66ed8c7bf3a8
+          columnCounter: 25dd7d82-d823-4b17-a336-d6f961432158
+          stepCounter: eb73f59b-5491-418b-90f0-9eb5d64e95d4
         config: {}
         dataType: VARIANT
         description: ""
@@ -28,13 +28,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: ea139218-de06-4f75-8208-92748afd2b1e
-                stepCounter: 6b93d9c6-f3db-4237-b059-078acf56f041
+              - columnCounter: 5b83f6ab-caed-48f3-9168-a61684166c1e
+                stepCounter: 7d22cde1-814d-4be1-829d-b65c8da62a69
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 9689f7ad-bf73-409d-b2a5-831e2c42a057
-          stepCounter: f3fb5b37-506f-4496-b725-66ed8c7bf3a8
+          columnCounter: 47b977b8-ee97-4689-96ed-6b4abbb0a426
+          stepCounter: eb73f59b-5491-418b-90f0-9eb5d64e95d4
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         description: ""
@@ -42,8 +42,8 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 59f918ba-70e2-48e2-a508-8967a055832d
-                stepCounter: 6b93d9c6-f3db-4237-b059-078acf56f041
+              - columnCounter: 1bb41f2e-1df9-43bd-9207-699373d94d82
+                stepCounter: 7d22cde1-814d-4be1-829d-b65c8da62a69
             transform: ""
     cteString: ""
     enabledColumnTestIDs: []
@@ -52,10 +52,10 @@ operation:
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: SOURCE
+          - locationName: SAMPLE
             nodeName: DAILY_14_TOTAL_SHORT
         join:
-          joinCondition: FROM {{ ref('SOURCE', 'DAILY_14_TOTAL_SHORT') }} "DAILY_14_TOTAL_SHORT"
+          joinCondition: FROM {{ ref('SAMPLE', 'DAILY_14_TOTAL_SHORT') }} "DAILY_14_TOTAL_SHORT"
         name: STG_DAILY_14_TOTAL_SHORT
         noLinkRefs: []
   name: STG_DAILY_14_TOTAL_SHORT
