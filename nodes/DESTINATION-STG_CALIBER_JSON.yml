@@ -1,0 +1,87 @@
+fileVersion: 1
+id: 4bf310bb-d4e1-43e0-a51f-3499a574eb5d
+name: STG_CALIBER_JSON
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DESTINATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8feb541a-dd40-4ac8-bc90-c29d3f9be6b8
+          stepCounter: 4bf310bb-d4e1-43e0-a51f-3499a574eb5d
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 778c6a6c-883a-488e-8dd2-0dc5332f6886
+                stepCounter: 61de0e2e-cfeb-40a3-af68-46d6f65beb70
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: CALIBER_JSON
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'CALIBER_JSON') }} "CALIBER_JSON", 
+            LATERAL FLATTEN(input => get(CALIBER_JSON.SRC, '$')) RepairOrderFolderAddRq_DamageLineInfo, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(CALIBER_JSON.SRC, 'DocumentInfo'), 'ReferenceInfo'), '$')) RepairOrderFolderAddRq_DocumentInfo_ReferenceInfo_OtherReferenceInfo, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'EventInfo'), '$')) RepairOrderFolderAddRq_EventInfo_OtherEvent, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'ProfileInfo'), '$')) RepairOrderFolderAddRq_ProfileInfo_RateInfo, 
+            LATERAL FLATTEN(input => get(RepairOrderFolderAddRq_ProfileInfo_RateInfo.value, '$')) RepairOrderFolderAddRq_ProfileInfo_RateInfo_AdjustmentInfo, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'RepairOrderEvents'), '$')) RepairOrderFolderAddRq_RepairOrderEvents_RepairOrderEvent, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALIBER_JSON.SRC, 'RepairOrderHeader'), 'AdminInfo'), 'InsuranceCompany'), 'Party'), 'OrgInfo'), '$')) RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_InsuranceCompany_Party_OrgInfo_IDInfo, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALIBER_JSON.SRC, 'RepairOrderHeader'), 'AdminInfo'), 'Insured'), 'Party'), 'PersonInfo'), '$')) RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_Insured_Party_PersonInfo_Communications, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALIBER_JSON.SRC, 'RepairOrderHeader'), 'AdminInfo'), 'Owner'), 'Party'), 'PersonInfo'), '$')) RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_Owner_Party_PersonInfo_Communications, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALIBER_JSON.SRC, 'RepairOrderHeader'), 'AdminInfo'), 'RepairFacility'), 'Party'), 'OrgInfo'), '$')) RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_RepairFacility_Party_OrgInfo_Communications, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALIBER_JSON.SRC, 'RepairOrderHeader'), 'AdminInfo'), 'RepairFacility'), 'Party'), 'OrgInfo'), '$')) RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_RepairFacility_Party_OrgInfo_IDInfo, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALIBER_JSON.SRC, 'RepairOrderHeader'), 'AdminInfo'), 'Supplier'), 'Party'), 'OrgInfo'), '$')) RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_Supplier_Party_OrgInfo_Communications, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'RepairOrderNotes'), '$')) RepairOrderFolderAddRq_RepairOrderNotes_RepairOrderNote, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'RepairTotalsInfo'), '$')) RepairOrderFolderAddRq_RepairTotalsInfo_LaborTotalsInfo, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'RepairTotalsInfo'), '$')) RepairOrderFolderAddRq_RepairTotalsInfo_OtherChargesTotalsInfo, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'RepairTotalsInfo'), '$')) RepairOrderFolderAddRq_RepairTotalsInfo_PartsTotalsInfo, 
+            LATERAL FLATTEN(input => get(xmlget(CALIBER_JSON.SRC, 'RepairTotalsInfo'), '$')) RepairOrderFolderAddRq_RepairTotalsInfo_SummaryTotalsInfo
+            where get(RepairOrderFolderAddRq_DamageLineInfo.value, '@') = 'DamageLineInfo'
+             and get(RepairOrderFolderAddRq_DocumentInfo_ReferenceInfo_OtherReferenceInfo.value, '@') = 'OtherReferenceInfo'
+             and get(RepairOrderFolderAddRq_EventInfo_OtherEvent.value, '@') = 'OtherEvent'
+             and get(RepairOrderFolderAddRq_ProfileInfo_RateInfo.value, '@') = 'RateInfo'
+             and get(RepairOrderFolderAddRq_RepairOrderEvents_RepairOrderEvent.value, '@') = 'RepairOrderEvent'
+             and get(RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_InsuranceCompany_Party_OrgInfo_IDInfo.value, '@') = 'IDInfo'
+             and get(RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_Insured_Party_PersonInfo_Communications.value, '@') = 'Communications'
+             and get(RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_Owner_Party_PersonInfo_Communications.value, '@') = 'Communications'
+             and get(RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_RepairFacility_Party_OrgInfo_Communications.value, '@') = 'Communications'
+             and get(RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_RepairFacility_Party_OrgInfo_IDInfo.value, '@') = 'IDInfo'
+             and get(RepairOrderFolderAddRq_RepairOrderHeader_AdminInfo_Supplier_Party_OrgInfo_Communications.value, '@') = 'Communications'
+             and get(RepairOrderFolderAddRq_RepairOrderNotes_RepairOrderNote.value, '@') = 'RepairOrderNote'
+             and get(RepairOrderFolderAddRq_RepairTotalsInfo_LaborTotalsInfo.value, '@') = 'LaborTotalsInfo'
+             and get(RepairOrderFolderAddRq_RepairTotalsInfo_OtherChargesTotalsInfo.value, '@') = 'OtherChargesTotalsInfo'
+             and get(RepairOrderFolderAddRq_RepairTotalsInfo_PartsTotalsInfo.value, '@') = 'PartsTotalsInfo'
+             and get(RepairOrderFolderAddRq_RepairTotalsInfo_SummaryTotalsInfo.value, '@') = 'SummaryTotalsInfo'
+        name: STG_CALIBER_JSON
+        noLinkRefs: []
+  name: STG_CALIBER_JSON
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

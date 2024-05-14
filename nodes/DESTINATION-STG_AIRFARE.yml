@@ -1,0 +1,60 @@
+fileVersion: 1
+id: 83af907a-ffcb-426e-aaff-9223bb3805c0
+name: STG_AIRFARE
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DESTINATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 488c1ef1-d7a2-4e50-a2e8-a1ab1c069da5
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: XML_COL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AIRFARE
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'AIRFARE') }} "AIRFARE", 
+            LATERAL FLATTEN(input => get(AIRFARE.XML_COL, '$')) PricedItinerary_AirItineraryPricingInfo, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'XTaxes'), '$')) PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax, 
+            LATERAL FLATTEN(input => get(xmlget(AIRFARE.XML_COL, 'OriginDestinationOption'), '$')) PricedItinerary_OriginDestinationOption_FlightSegment
+            where get(PricedItinerary_AirItineraryPricingInfo.value, '@') = 'AirItineraryPricingInfo'
+             and get(PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax.value, '@') = 'Tax'
+             and get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@') = 'FlightSegment'
+        name: STG_AIRFARE
+        noLinkRefs: []
+  name: STG_AIRFARE
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

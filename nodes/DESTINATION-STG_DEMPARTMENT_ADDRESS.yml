@@ -1,0 +1,53 @@
+fileVersion: 1
+id: 88e0c13a-f12b-4c58-90bf-db07bcb8e66e
+name: STG_DEMPARTMENT_ADDRESS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DESTINATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 636399b1-ee3a-48bf-9d78-5e496bf3dd7d
+          stepCounter: 88e0c13a-f12b-4c58-90bf-db07bcb8e66e
+        config: {}
+        dataType: OBJECT
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a779f5a-d208-494f-a1f3-6ee04251e641
+                stepCounter: 93c9a89d-d35f-49dd-8a3b-6e3a6ef8ecbc
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: DEMPARTMENT_ADDRESS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'DEMPARTMENT_ADDRESS') }} "DEMPARTMENT_ADDRESS"
+        name: STG_DEMPARTMENT_ADDRESS
+        noLinkRefs: []
+  name: STG_DEMPARTMENT_ADDRESS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,56 @@
+fileVersion: 1
+id: 1522a2a9-1136-4004-8d82-512a6d9d9dd0
+name: STG_CALIBER_XML
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DESTINATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d49c776-39c5-4fd0-bc30-e39755217cfb
+          stepCounter: 1522a2a9-1136-4004-8d82-512a6d9d9dd0
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5c960086-aba5-4924-8371-26f6b3003b3e
+                stepCounter: e6f37af7-5fc5-4cd3-9f4d-7bf0a50426f5
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: CALIBER_XML
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'CALIBER_XML') }} "CALIBER_XML", 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'data'), '$')) PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder
+            where get(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, '@') = 'repairOrder'
+        name: STG_CALIBER_XML
+        noLinkRefs: []
+  name: STG_CALIBER_XML
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,56 @@
+fileVersion: 1
+id: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+name: STG_CALLIBER_XML
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: DESTINATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca32414f-b9da-4551-b046-5042d7d2f1a1
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: CALLIBER_XML
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'CALLIBER_XML') }} "CALLIBER_XML", 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'data'), '$')) PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder
+            where get(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, '@') = 'repairOrder'
+        name: STG_CALLIBER_XML
+        noLinkRefs: []
+  name: STG_CALLIBER_XML
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
