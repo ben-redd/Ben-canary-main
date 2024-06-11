@@ -4,7 +4,7 @@ name: STG_CUSTOMER
 operation:
   config:
     insertStrategy: INSERT
-    postSQL: ""
+    postSQL: SELECT 1 FROM {{ ref('WORK', 'STG_CUSTOMER') }} LIMIT 0
     preSQL: ""
     testsEnabled: true
     truncateBefore: true
