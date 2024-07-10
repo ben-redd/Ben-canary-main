@@ -1,0 +1,67 @@
+fileVersion: 1
+id: 7fb96612-210b-4e2d-aa88-21437e3b8a40
+name: STG_DAILY_14_TOTAL_SHORT166
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57eb60ad-ba0e-4aaa-a5bf-bc8574cd61f2
+          stepCounter: 7fb96612-210b-4e2d-aa88-21437e3b8a40
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: V
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 875979a5-cc2b-451c-b34f-0d9c0d6c4ac6
+                stepCounter: 3423b12d-203b-4e55-a4a7-da0e7a5e7ea8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97192b4e-142a-4d99-980d-cb10ad6f94f3
+          stepCounter: 7fb96612-210b-4e2d-aa88-21437e3b8a40
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: T
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d0b4c46f-457a-44d0-84c6-797b70724b9d
+                stepCounter: 3423b12d-203b-4e55-a4a7-da0e7a5e7ea8
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: STG_DAILY_14_TOTAL_SHORT12
+        join:
+          joinCondition: FROM {{ ref('WORK', 'STG_DAILY_14_TOTAL_SHORT12') }} "STG_DAILY_14_TOTAL_SHORT12"
+        name: STG_DAILY_14_TOTAL_SHORT166
+        noLinkRefs: []
+  name: STG_DAILY_14_TOTAL_SHORT166
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
