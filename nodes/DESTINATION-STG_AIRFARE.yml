@@ -31,6 +31,771 @@ operation:
               - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
                 stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 983e6c5d-378e-41b3-90ce-45db6f9b8051
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_CurrencyCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(AIRFARE.XML_COL, '@CurrencyCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46e69e45-4b88-48c1-8a02-d954aca5d5fd
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_RPH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(AIRFARE.XML_COL, '@RPH')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01fc7120-40ea-4cf2-b280-640aaec44dbf
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_TotalAmount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(AIRFARE.XML_COL, '@TotalAmount')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: da803573-8383-4c0e-945e-289f71851c15
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_FareCalculation_Text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'FareCalculation'), 'Text'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57181b9f-de9b-4ae3-b5b7-6f9e79735bb7
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_BaseFare_Amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'BaseFare'), '@Amount')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ad19941-cd4b-4956-9045-99f565f1ca38
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_BaseFare_CurrencyCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'BaseFare'), '@CurrencyCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5bcdfad2-df1d-423d-9059-4340328e2db3
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_Commission_Amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'Commission'), '@Amount')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b5b7adec-94cb-49a1-8b98-775400af6925
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_Commission_Percent
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'Commission'), '@Percent')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a511cbe8-94cc-48d4-b17a-7b1cca593591
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_EquivFare_Amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'EquivFare'), '@Amount')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 874b3d3d-df7a-4f2e-8d49-d1f117946292
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_EquivFare_CurrencyCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'EquivFare'), '@CurrencyCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4b55925-0177-42b2-804b-e963a8928d56
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax_Amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax.value, '@Amount')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 353ce81d-33cd-452a-a36e-0bf339c2869d
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax_TaxCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax.value, '@TaxCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e8c114c6-6c2a-493a-b56c-52ed4adc9eb1
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax_TaxName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax.value, '@TaxName')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00ad1900-239a-48d7-8ce6-d4407a5236d8
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_TotalFare_Amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'TotalFare'), '@Amount')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c2496b24-7444-45f5-85ae-14668f97762e
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_TotalFare_CurrencyCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'TotalFare'), '@CurrencyCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba9c14bd-f21e-4cb2-9acd-02e8efc4a44f
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_PassengerTypeQuantity_Code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'PassengerTypeQuantity'), '@Code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 871d7bf8-9933-4c04-9167-850d88bc2257
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_PassengerTypeQuantity_Quantity
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'PassengerTypeQuantity'), '@Quantity')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e5da2d6-2e4a-46e9-b7c6-a86940a20b4a
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_PTC_FareBreakdown_FareBasis_Code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'PTC_FareBreakdown'), 'FareBasis'), '@Code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09a3354d-ef3e-46a0-8c91-08509ca886f5
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_PTC_FareBreakdown_FareBasis_FarePassengerType
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'PTC_FareBreakdown'), 'FareBasis'), '@FarePassengerType')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 106c16dd-6da5-4aa8-8bf1-d807cc57171d
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_PTC_FareBreakdown_FareBasis_GlobalInd
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'PTC_FareBreakdown'), 'FareBasis'), '@GlobalInd')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70ef57c1-5f68-4f06-b463-c84f589bfa75
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_PTC_FareBreakdown_FareBasis_Market
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'PTC_FareBreakdown'), 'FareBasis'), '@Market')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c7f47e5-c0cf-43f6-bde9-03b4894687ba
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_AirItineraryPricingInfo_PTC_FareBreakdown_FareBasis_TicketDesignator
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'PTC_FareBreakdown'), 'FareBasis'), '@TicketDesignator')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84938f47-e19a-461e-a1d0-ea89cc2e565f
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_HeaderInformation_ValidatingCarrier_Code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(xmlget(AIRFARE.XML_COL, 'HeaderInformation'), 'ValidatingCarrier'), '@Code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5544081d-364c-4795-9963-f3e91e3be84a
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_RPH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(AIRFARE.XML_COL, 'OriginDestinationOption'), '@RPH')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e7bc402-16eb-47fb-8ab5-77f43b13c1d1
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_ArrivalDateTime
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@ArrivalDateTime')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 24fc326f-e267-4ac0-85cc-f6a384d498de
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_ConnectionInd
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@ConnectionInd')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d50e6f31-6b3e-4942-a4a7-61713240b04a
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_DepartureDateTime
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@DepartureDateTime')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e58bde7b-672b-4ae2-b27c-50d484b07ca1
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_DestinationTimeZone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@DestinationTimeZone')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 295277f0-15a2-4dc5-a8dc-98b4d8310d5e
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_DivideInd
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@DivideInd')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a1c6173-20eb-4cab-a094-eeb4ade10d61
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_ElapsedTime
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@ElapsedTime')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27690201-490f-4143-9b2b-a94c78733f91
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_FlightNumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@FlightNumber')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bcdf3947-20f0-43c4-97ce-ada873cb4e8d
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_MarketingCabin
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@MarketingCabin')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43af0829-fe6f-4f77-938e-0361d304469b
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_OriginTimeZone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@OriginTimeZone')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c7e5f1c-4eb0-4204-bbb5-6cb670edf417
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_RPH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@RPH')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a28eadf-8a76-40b7-a45c-6fd5a3f37c87
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_ResBookDesigCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@ResBookDesigCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16204c51-45cf-44e3-9656-934d44d72030
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_StopQuantity
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@StopQuantity')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f47b977-056f-431e-945f-0d8a7832ddfb
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_eTicket
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@eTicket')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 057a9fea-2df0-471c-b336-17a0fcec1a0d
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_DestinationLocation_LocationCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'DestinationLocation'), '@LocationCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12a3cab1-c2d2-44c9-bb0a-81fec9d41dab
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_Equipment_AirEquipType
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'Equipment'), '@AirEquipType')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10550f22-c159-4733-9bc3-03bd0f1910e5
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_MarketingAirline_Code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'MarketingAirline'), '@Code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef0e3fd6-c633-4159-af41-c5e4528467ee
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_MarketingAirline_FlightNumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'MarketingAirline'), '@FlightNumber')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4dad350-94da-41a1-8106-12d9edc1cfda
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_MarriageGrp_Ind
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'MarriageGrp'), '@Ind')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1164ed59-358a-492c-810b-fb7a58f0ad33
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_Meal_MealCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'Meal'), '@MealCode')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfbb4457-5b83-49ff-86b6-cc85113ddf87
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_OperatingAirline_Code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'OperatingAirline'), '@Code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9dc9386-25a0-4566-ab75-294587b4c4c3
+          stepCounter: 83af907a-ffcb-426e-aaff-9223bb3805c0
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PricedItinerary_OriginDestinationOption_FlightSegment_OriginLocation_LocationCode
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b10f4cf-db5d-4914-96d1-359b21456fbe
+                stepCounter: dc9dc06c-32ed-4a78-888a-320760a87142
+            transform: get(xmlget(PricedItinerary_OriginDestinationOption_FlightSegment.value, 'OriginLocation'), '@LocationCode')
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -43,6 +808,12 @@ operation:
         join:
           joinCondition: |-
             FROM {{ ref('SOURCE', 'AIRFARE') }} "AIRFARE", 
+            LATERAL FLATTEN(input => get(AIRFARE.XML_COL, '$')) PricedItinerary_AirItineraryPricingInfo, 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'XTaxes'), '$')) PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax, 
+            LATERAL FLATTEN(input => get(xmlget(AIRFARE.XML_COL, 'OriginDestinationOption'), '$')) PricedItinerary_OriginDestinationOption_FlightSegment
+            where get(PricedItinerary_AirItineraryPricingInfo.value, '@') = 'AirItineraryPricingInfo'
+             and get(PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax.value, '@') = 'Tax'
+             and get(PricedItinerary_OriginDestinationOption_FlightSegment.value, '@') = 'FlightSegment', 
             LATERAL FLATTEN(input => get(AIRFARE.XML_COL, '$')) PricedItinerary_AirItineraryPricingInfo, 
             LATERAL FLATTEN(input => get(xmlget(xmlget(PricedItinerary_AirItineraryPricingInfo.value, 'ItinTotalFare'), 'XTaxes'), '$')) PricedItinerary_AirItineraryPricingInfo_ItinTotalFare_XTaxes_Tax, 
             LATERAL FLATTEN(input => get(xmlget(AIRFARE.XML_COL, 'OriginDestinationOption'), '$')) PricedItinerary_OriginDestinationOption_FlightSegment

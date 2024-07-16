@@ -31,6 +31,1264 @@ operation:
               - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
                 stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1ee3b36-2e37-4eff-a69e-8f3b7cf8e986
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_xmlns
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(CALLIBER_XML.SRC, '@xmlns')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 343a146f-c5ab-48bb-8b63-c600eb5fc68b
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_TrackingInfo_MessageID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'TrackingInfo'), 'MessageID'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86abed99-17d1-46fa-8f58-e34174de261b
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_TrackingInfo_CorrelationID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'TrackingInfo'), 'CorrelationID'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 03cc52b5-dd23-41d2-970f-c06f05b16d36
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_TrackingInfo_CreateDateTime
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'TrackingInfo'), 'CreateDateTime'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 795d1ed0-7ee3-4e71-bccc-66cb75d4809b
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_TrackingInfo_PartnerID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'TrackingInfo'), 'PartnerID'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a18a7d7-ac1d-498e-add2-6155b5b1023a
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_RoutingInfo_MessageVersion
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'RoutingInfo'), 'MessageVersion'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c1b4fc6-d908-4feb-9210-ab17fff00450
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_RoutingInfo_MessageDefinition
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'RoutingInfo'), 'MessageDefinition'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7fcbe0e5-7e5d-415d-9d09-b4a25cd09473
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_RoutingInfo_MessageDirection
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'RoutingInfo'), 'MessageDirection'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d43694f2-fc86-4569-89bb-d24d5ebf2ab8
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_xmlns
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), '@xmlns')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd317e67-a0cc-4bec-a61e-a0198077b02f
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_xmlns
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), '@xmlns')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92c2c3e3-53ba-4edc-b742-1b40c9513bd6
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_Status
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'Status'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 22892c25-a8c5-40f2-9b20-137b1238b488
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_companyName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'companyName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 062783c1-d201-41fc-8a26-37ea57016cd2
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_reportName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'reportName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 65f945dc-cfe6-4051-b0bf-94752105b0d4
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_createdDateTime
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'createdDateTime'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e5435a7-1b72-403e-9d30-00439d2e15af
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_geographyReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'geographyReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c362886-e45d-4efc-9757-edfc2342fb82
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_geographyReportViewParameter_valueName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'geographyReportViewParameter'), 'valueName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ae3f046-35cb-4381-a9eb-4e581904a1fc
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_asOfDateReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'asOfDateReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2299580-ad9f-4b53-9e17-51ce596a8ed3
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_asOfDateReportViewParameter_asOfDateType
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'asOfDateReportViewParameter'), 'asOfDateType'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ebeee2c-82bd-4282-8b6b-0b5409eff26e
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_asOfDateReportViewParameter_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'asOfDateReportViewParameter'), 'date'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b967bd1-0d07-4ccc-b906-e75c411582ec
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_totalLossReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'totalLossReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18976e6a-33a4-4d82-af9c-982000267d07
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_totalLossReportViewParameter_flag
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'totalLossReportViewParameter'), 'flag'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b203775-c169-4c15-beec-7b5f2b75e2f6
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_serviceWriterReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'serviceWriterReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b02d06ab-f34a-40b0-9add-f20141c48512
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_serviceWriterReportViewParameter_list
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'serviceWriterReportViewParameter'), 'list'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 426ca97f-7129-437e-90b1-f93ab8f96b30
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_carrierReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'carrierReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12a58fde-d98a-40c5-b265-36d29d022d34
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_carrierReportViewParameter_carrierName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'carrierReportViewParameter'), 'carrierName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16051e7e-c804-4e7b-b471-41c191903c85
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_carrierReportViewParameter_includeSecondaryInsCompanies
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'carrierReportViewParameter'), 'includeSecondaryInsCompanies'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1faeb98a-25a7-42d6-9bf1-871e96e1f3fb
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_referrerReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'referrerReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9389b6ec-581f-46be-939e-7e1e98cd2f0b
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_referrerReportViewParameter_value
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'referrerReportViewParameter'), 'value'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01036e00-f78d-4799-9f5b-8b69caedef3f
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_repairPlanReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'repairPlanReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0081f6bc-43e5-4b43-9c67-80be4b7ac8d0
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_repairPlanReportViewParameter_repairPlanName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'repairPlanReportViewParameter'), 'repairPlanName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 768f75f4-396b-4055-a62e-70efca6b69bc
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_vehicleMakeReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'vehicleMakeReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eacc18f6-67d2-47d4-970a-ff610aee6157
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_vehicleMakeReportViewParameter_vehicleMakeName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'vehicleMakeReportViewParameter'), 'vehicleMakeName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf84084d-11a5-49a1-8d5b-6b09c9a25fee
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_customerCustomField1ReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'customerCustomField1ReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb466ec7-7652-4244-91ef-1ca45485837f
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_customerCustomField1ReportViewParameter_customFieldID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'customerCustomField1ReportViewParameter'), 'customFieldID'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c326c96-9c6f-4497-ab8a-33f9df4b87b0
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_customerCustomField2ReportViewParameter_displayName
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'customerCustomField2ReportViewParameter'), 'displayName'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e612a366-c6bc-4a36-80d1-e8600077752e
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_header_parameters_customerCustomField2ReportViewParameter_customFieldID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'header'), 'parameters'), 'customerCustomField2ReportViewParameter'), 'customFieldID'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85700405-6f85-45e7-8147-7851ffb007d7
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_row_index
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'row_index'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1279622d-d964-4b60-8cf7-dd50aae58116
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_workfile_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'workfile_id'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0184e46b-b959-4dad-bc97-af229f0fbde5
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_repair_facility_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'repair_facility_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1447b5c8-2682-499a-a885-5dc10fedd025
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_repair_facility_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'repair_facility_number'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8569c628-d408-44a6-82e3-0263a4a2169a
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_franchise_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'franchise_id'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63bc2334-20be-40cf-8b04-ee86e8bd612b
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_repair_order_info
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'repair_order_info'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8ed1e3a-20dd-4716-aa7f-0715dc9b7566
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_repair_order_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'repair_order_number'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b5eaaa89-26a1-4760-9e6d-44ab0f68f442
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_owner_postal_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'owner_postal_code'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f83f5d9e-05c4-416f-b314-10820fd62cb3
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_owner_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'owner_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5636772c-0035-4def-b85c-9afe2cb45e3d
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_owner_primary_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'owner_primary_phone'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86ae4142-4893-4bf0-b0a2-3e80cf3032c6
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_vehicle_year_make_model
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'vehicle_year_make_model'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee424521-b6a4-427f-ba0f-f4d2e36caff9
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_vehicle_make_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'vehicle_make_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 502701ff-3c21-4aaf-9e97-2213aeeb63fc
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_account_type_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'account_type_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a766f766-219e-4c34-80ca-d8e9bec001a7
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_account_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'account_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e84a86af-bdba-4b83-9e4b-8b1257e89c96
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_sales_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'sales_amount'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd2785e3-b713-4037-8d0b-3802758bf553
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_sales_hours
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'sales_hours'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 750a08d7-7ce8-418e-9ece-1fe6174c8c39
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_cost_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'cost_amount'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 75c33569-84d5-41aa-b4d5-3a2f5e346b65
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_cost_hours
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'cost_hours'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: da82484f-cf86-4547-8e9d-61456559cf38
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_gross_profit_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'gross_profit_amount'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3fee884c-29e8-471a-bf35-ea0e2bf75411
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_gross_profit_percent
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'gross_profit_percent'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 461fa3bb-fec0-481d-b87f-03feb3c68aa9
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_target_gross_profit_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'target_gross_profit_amount'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d53b92f7-49a4-4ba7-b8df-412b172297df
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_target_gross_profit_percent
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'target_gross_profit_percent'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e7dcd10-8f3e-4449-b636-18b1f832783f
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_is_total_loss
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'is_total_loss'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 448c0ead-2a21-44d3-85b6-2945d9225f54
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_service_writer_display_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'service_writer_display_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3b062f1-c60b-41f7-9144-d08947bec76a
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_carrier_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'carrier_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1eb67d06-dcdc-4305-b240-713660d0c0a3
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_master_carrier_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'master_carrier_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 916d5e8d-3300-47a5-b39b-c9f6c314e9fc
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_primary_referral_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'primary_referral_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a3e9e56-4282-47ac-8ad5-d7c4a25653f4
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_repair_plan_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'repair_plan_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e76aa3e3-e4c9-4b7e-8da1-22150748cf26
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_primary_poi
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'primary_poi'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a98dbe22-3e12-4e1c-a34e-59af173b8ec6
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_sales_rate_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'sales_rate_amount'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4445fd26-605b-42ab-b226-3b5d7063d295
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_cost_rate_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'cost_rate_amount'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61f770e9-555d-4d05-9089-1bdfd273b5c7
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_created_datetime
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'created_datetime'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb965b87-82a6-4aef-9331-d11ad3977f7b
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_primary_referral_note
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'primary_referral_note'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57b15f78-5fe8-402b-bb9a-97a6e84589c2
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_customer_custom_field_name_1
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'customer_custom_field_name_1'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83e67093-c4be-43cd-969c-8519895661b9
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_customer_custom_field_name_2
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'customer_custom_field_name_2'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83e5cf17-7745-4565-8076-ee22f5539336
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_sales_item_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'sales_item_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 03469ca1-2c2c-410e-ad65-4c05686cc019
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_cogs_account_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'cogs_account_name'), '$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9587505-ef2f-4ba5-9c3a-867dca2be915
+          stepCounter: f6584f35-a291-4188-b9e2-2c3eca19c0e7
+        config: {}
+        dataType: STRING
+        description: ""
+        name: PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder_cogs_item_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aeb3e314-57b1-4e9e-8940-caafa94e6b68
+                stepCounter: c762fc53-6973-4f01-9a14-c22ead1662c1
+            transform: get(xmlget(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, 'cogs_item_name'), '$')
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -43,6 +1301,8 @@ operation:
         join:
           joinCondition: |-
             FROM {{ ref('SOURCE', 'CALLIBER_XML') }} "CALLIBER_XML", 
+            LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'data'), '$')) PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder
+            where get(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, '@') = 'repairOrder', 
             LATERAL FLATTEN(input => get(xmlget(xmlget(xmlget(xmlget(xmlget(CALLIBER_XML.SRC, 'Payload'), 'ResponseList'), 'MT10403Response'), 'reportResponse'), 'data'), '$')) PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder
             where get(PartnerMessageEnvelope_Payload_ResponseList_MT10403Response_reportResponse_data_repairOrder.value, '@') = 'repairOrder'
         name: STG_CALLIBER_XML
