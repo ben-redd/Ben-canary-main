@@ -1,26 +1,23 @@
 fileVersion: 1
-id: e4a86ee3-f64d-4e94-b65a-8758f89b81ef
-name: STG_NATION2
+id: c162c5aa-01f8-4a74-a373-88e84db97c7d
+name: V_VIEW
 operation:
   config:
-    insertStrategy: INSERT
-    postSQL: ""
-    preSQL: ""
-    testsEnabled: true
-    truncateBefore: true
+    insertStrategy: UNION
+    selectDistinct: false
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: WORK
-  materializationType: table
+  materializationType: view
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 7ad0f087-dcc3-479d-94ef-2ff5e617388d
-          stepCounter: e4a86ee3-f64d-4e94-b65a-8758f89b81ef
+          columnCounter: 8f2448a9-4ae8-45da-bde0-ee6dd4aed72d
+          stepCounter: c162c5aa-01f8-4a74-a373-88e84db97c7d
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -28,13 +25,13 @@ operation:
         nullable: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: e8240f8f-f163-4541-9dd1-a694ba24abf6
-                stepCounter: bb1e6ab2-d46b-46d0-9a09-1bdac68549fc
+              - columnCounter: 603b36f0-8324-446c-bb26-e5cb0abd9b93
+                stepCounter: 8ca5a29c-b3d8-4b6e-86da-d8de158c3e74
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 8ad074f0-444a-444e-ad16-0e7fdeb2737a
-          stepCounter: e4a86ee3-f64d-4e94-b65a-8758f89b81ef
+          columnCounter: 85a174ee-664f-46c6-9aa4-3b8d8452ad7e
+          stepCounter: c162c5aa-01f8-4a74-a373-88e84db97c7d
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -42,13 +39,13 @@ operation:
         nullable: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: e03c66c3-a103-4147-bc4b-604e0258e2e7
-                stepCounter: bb1e6ab2-d46b-46d0-9a09-1bdac68549fc
+              - columnCounter: 5c8a577d-571e-4859-a8a9-74c2bebd3398
+                stepCounter: 8ca5a29c-b3d8-4b6e-86da-d8de158c3e74
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: e752d8b5-3460-4556-a28a-1fb9f8eae767
-          stepCounter: e4a86ee3-f64d-4e94-b65a-8758f89b81ef
+          columnCounter: 8442765d-824e-4016-ba31-751ce75b3b56
+          stepCounter: c162c5aa-01f8-4a74-a373-88e84db97c7d
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -56,13 +53,13 @@ operation:
         nullable: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 3063f04d-216b-4819-b61a-52e86eee69c2
-                stepCounter: bb1e6ab2-d46b-46d0-9a09-1bdac68549fc
+              - columnCounter: e86d4092-c38f-4d71-9c1f-4cb372bbf2d8
+                stepCounter: 8ca5a29c-b3d8-4b6e-86da-d8de158c3e74
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c71c6f1a-9ec0-486e-86d9-9d357e996fd0
-          stepCounter: e4a86ee3-f64d-4e94-b65a-8758f89b81ef
+          columnCounter: a126d770-8f11-4d7f-b479-c6d0fc760a45
+          stepCounter: c162c5aa-01f8-4a74-a373-88e84db97c7d
         config: {}
         dataType: VARCHAR(152)
         description: ""
@@ -70,8 +67,8 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 271dfd91-0293-4b1e-a1c9-37b5a67fba8f
-                stepCounter: bb1e6ab2-d46b-46d0-9a09-1bdac68549fc
+              - columnCounter: f67e78d2-df4e-4a6d-a40c-bf84aebff5bd
+                stepCounter: 8ca5a29c-b3d8-4b6e-86da-d8de158c3e74
             transform: ""
     cteString: ""
     enabledColumnTestIDs: []
@@ -80,16 +77,16 @@ operation:
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: WORK
-            nodeName: STG_NATION
+          - locationName: SAMPLE
+            nodeName: NATION
         join:
-          joinCondition: FROM {{ ref('WORK', 'STG_NATION') }} "STG_NATION"
-        name: STG_NATION2
+          joinCondition: FROM {{ ref('SAMPLE', 'NATION') }} "NATION"
+        name: V_VIEW
         noLinkRefs: []
-  name: STG_NATION2
+  name: V_VIEW
   overrideSQL: false
   schema: ""
-  sqlType: Stage
+  sqlType: View
   type: sql
   version: 1
 type: Node
