@@ -69,18 +69,19 @@ operation:
           - columnReferences:
               - columnCounter: a126d770-8f11-4d7f-b479-c6d0fc760a45
                 stepCounter: c162c5aa-01f8-4a74-a373-88e84db97c7d
-            transform: UPPER("CUSTOMER"."C_COMMENT")
+            transform: UPPER("V_VIEW"."N_COMMENT")
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          V_VIEW: c162c5aa-01f8-4a74-a373-88e84db97c7d
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
-            nodeName: V_NATION
+            nodeName: V_VIEW
         join:
-          joinCondition: FROM {{ ref('WORK', 'V_NATION') }} "V_NATION"
+          joinCondition: FROM {{ ref('WORK', 'V_VIEW') }} "V_VIEW"
         name: V_ADVANCED_VIEW
         noLinkRefs: []
   name: V_ADVANCED_VIEW
