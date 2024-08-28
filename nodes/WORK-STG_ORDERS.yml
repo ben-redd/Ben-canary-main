@@ -151,20 +151,15 @@ operation:
     sourceMapping:
       - aliases:
           ORDERS: f2f85b10-a597-4507-9ac6-1654ae44b8e7
-          STG_ORDERS1: 3af49681-72d8-480c-8bb2-74f38e55edcb
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SAMPLE
             nodeName: ORDERS
         join:
-          joinCondition: |-
-            FROM {{ ref('SAMPLE', 'ORDERS') }} "ORDERS"
-            inner join {{ ref_no_link('WORK', 'STG_ORDERS1') }} "STG_ORDERS1"
+          joinCondition: FROM {{ ref('SAMPLE', 'ORDERS') }} "ORDERS"
         name: STG_ORDERS
-        noLinkRefs:
-          - locationName: WORK
-            nodeName: STG_ORDERS1
+        noLinkRefs: []
   name: STG_ORDERS
   overrideSQL: false
   schema: ""
