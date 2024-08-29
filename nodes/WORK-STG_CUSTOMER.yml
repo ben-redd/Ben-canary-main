@@ -5,7 +5,7 @@ operation:
   config:
     insertStrategy: INSERT
     postSQL: SELECT 1 FROM {{ ref('WORK', 'STG_CUSTOMER') }} LIMIT 0
-    preSQL: ""
+    preSQL: SELECT 1 FROM {{ ref('WORK', 'STG_CUSTOMER') }} LIMIT 0
     testsEnabled: true
     truncateBefore: true
   database: BEN_EDW
